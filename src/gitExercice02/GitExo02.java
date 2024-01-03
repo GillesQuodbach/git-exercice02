@@ -27,21 +27,21 @@ public class GitExo02 {
 
 		System.out.println("Bienvenue au jeu du NIM");
 
-//		System.out.println("Entrer nom joueur 1");
-//		player1Name = scan.nextLine();
-//		System.out.println("Nom joueur 1: " + player1Name);
-//		
-//		System.out.println("Entrer nom joueur 2");
-//		player2Name = scan.nextLine();
-//		System.out.println("Nom joueur 2: " + player2Name);
+		System.out.println("Entrer nom joueur 1");
+		player1Name = scan.nextLine();
+		
+		
+		System.out.println("Entrer nom joueur 2");
+		player2Name = scan.nextLine();
+
 
 		System.out.println("Quel joueur commence la partie ? 1 ou 2");
 		currentPlayer = Integer.parseInt(scan.nextLine());
-			System.out.println("Le joueur " + currentPlayer + " commence la partie");
+			System.out.println("A " + (currentPlayer == 1 ? player1Name : player2Name) + " de commencer la partie");
 			System.out.println("Le nombre d'alumette total est de: " + startMatchesNumber );
 			while (startMatchesNumber > 0) {
 				while (isValidNumber) {
-					System.out.println("Au joueur " + currentPlayer + " de jouer");
+					System.out.println("A " + (currentPlayer == 1 ? player1Name : player2Name) + " de jouer");
 					System.out.println("Combien d'allumette voulez vous retirez ? (1 à 4)");
 					howManyMatches = Integer.parseInt(scan.nextLine());
 					if ((howManyMatches < 1) || (howManyMatches > 4)) {
@@ -51,7 +51,7 @@ public class GitExo02 {
 						startMatchesNumber = startMatchesNumber - howManyMatches;
 						System.out.println("Allumette restante: " + startMatchesNumber);
 						if (startMatchesNumber <= 0) {
-							System.out.println("Le joueur " + currentPlayer + " à perdu !");
+							System.out.println((currentPlayer == 1 ? player1Name : player2Name) + " à perdu !");
 							break;
 						}
 						currentPlayer = (currentPlayer == 1) ? 2 : 1;
